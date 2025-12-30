@@ -1,1 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hüseyin Tüç | iOS / Swift Developer</title>
+  <meta name="description" content="Hüseyin Tüç — Computer Science student from Kocaeli, Swift developer based in Istanbul." />
 
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#0f1733;
+      --muted:#a9b3d1;
+      --text:#eef2ff;
+      --line:rgba(255,255,255,.10);
+      --accent:#7c3aed;
+      --accent2:#22c55e;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 15% 10%, rgba(124,58,237,.25), transparent 60%),
+        radial-gradient(900px 600px at 85% 15%, rgba(34,197,94,.18), transparent 60%),
+        radial-gradient(700px 500px at 50% 95%, rgba(59,130,246,.12), transparent 60%),
+        var(--bg);
+      min-height:100vh;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1040px; margin:0 auto; padding:28px 18px 60px;}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 16px; border:1px solid var(--line);
+      background:rgba(15,23,51,.55); backdrop-filter: blur(10px);
+      border-radius:16px;
+    }
+    .brand{display:flex; gap:10px; align-items:center;}
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), #3b82f6);
+      box-shadow: 0 10px 26px rgba(124,58,237,.35);
+    }
+    .brand b{letter-spacing:.2px}
+    .navlinks{display:flex; gap:14px; font-size:14px; color:var(--muted)}
+    .navlinks a{padding:8px 10px; border-radius:10px;}
+    .navlinks a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .hero{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){
+      .hero{grid-template-columns: 1fr;}
+      .navlinks{display:none;}
+    }
+    .card{
+      border:1px solid var(--line);
+      background:rgba(15,23,51,.55);
+      backdrop-filter: blur(10px);
+      border-radius:18px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:42px;
+      line-height:1.08;
+      letter-spacing:-.6px;
+    }
+    .subtitle{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      max-width:60ch;
+    }
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;}
+    .chip{
+      font-size:13px;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:999px;
+      color:var(--muted);
+    }
+    .chip strong{color:var(--text); font-weight:600}
+    .cta{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      padding:11px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-size:14px;
+      cursor:pointer;
+      transition: transform .08s ease, background .2s ease;
+      user-select:none;
+    }
+    .btn:hover{background:rgba(255,255,255,.08)}
+    .btn:active{transform: translateY(1px)}
+    .btn.primary{
+      border-color: rgba(124,58,237,.55);
+      background: linear-gradient(135deg, rgba(124,58,237,.9), rgba(59,130,246,.75));
+      box-shadow: 0 14px 30px rgba(124,58,237,.20);
+    }
+    .side h2{margin:0 0 12px; font-size:18px; letter-spacing:.2px}
+    .kv{display:grid; gap:10px; margin-top:10px;}
+    .row{
+      display:flex; justify-content:space-between; gap:12px;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:14px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .row span:last-child{color:var(--text); font-weight:600}
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 860px){ .grid{grid-template-columns: 1fr;} }
+    .mini h3{margin:0 0 6px; font-size:15px}
+    .mini p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
+    .footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+      opacity:.9;
+    }
+    .divider{
+      height:1px; background:var(--line);
+      margin:18px 0;
+    }
+    .note{color:var(--muted); font-size:13px; margin:10px 0 0;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <b>Hüseyin Tüç</b><br />
+          <span style="color:var(--muted); font-size:13px;">iOS / Swift Developer</span>
+        </div>
+      </div>
+
+      <nav class="navlinks" aria-label="sections">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <article class="card">
+        <h1>Building clean, fast iOS apps with Swift.</h1>
+        <p class="subtitle" id="about">
+          I’m <b>Hüseyin Tüç</b>, a <b>Computer Science student</b> from <b>Kocaeli</b>,
+          currently based in <b>Istanbul</b>. I focus on iOS development with Swift,
+          aiming for simple UI, solid architecture, and smooth performance.
+        </p>
+
+        <div class="chips" id="skills" aria-label="highlights">
+          <div class="chip"><strong>Role:</strong> Swift Developer</div>
+          <div class="chip"><strong>Location:</strong> Istanbul, TR</div>
+          <div class="chip"><strong>Born:</strong> 2003</div>
+          <div class="chip"><strong>Education:</strong> Computer Science</div>
+        </div>
+
+        <div class="cta" id="contact">
+          <!-- Buraya kendi linklerini ekle -->
+          <a class="btn primary" href="mailto:yourmail@example.com">Email me</a>
+          <a class="btn" href="https://github.com/USERNAME" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/USERNAME" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+
+        <p class="note">Tip: Replace the placeholders (email / GitHub / LinkedIn) with your real links.</p>
+      </article>
+
+      <aside class="card side">
+        <h2>Quick facts</h2>
+        <div class="kv" role="list">
+          <div class="row" role="listitem"><span>Primary focus</span><span>iOS (Swift)</span></div>
+          <div class="row" role="listitem"><span>Based in</span><span>Istanbul</span></div>
+          <div class="row" role="listitem"><span>From</span><span>Kocaeli</span></div>
+          <div class="row" role="listitem"><span>Birth year</span><span>2003</span></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>What I care about</h2>
+        <div class="kv">
+          <div class="row"><span>Code quality</span><span>Readable & maintainable</span></div>
+          <div class="row"><span>UX</span><span>Simple & responsive</span></div>
+          <div class="row"><span>Performance</span><span>Fast and smooth</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid" id="projects" aria-label="project cards">
+      <div class="card mini">
+        <h3>📱 iOS Projects</h3>
+        <p>
+          Showcase your apps here. Add 2–3 bullet points per project:
+          features, architecture, and what you learned.
+        </p>
+      </div>
+
+      <div class="card mini">
+        <h3>🧩 Skills</h3>
+        <p>
+          Swift • UIKit / SwiftUI • Networking • JSON • Git • Clean Architecture (MVVM)
+          — edit this list however you want.
+        </p>
+      </div>
+
+      <div class="card mini">
+        <h3>🎯 Goals</h3>
+        <p>
+          Keep improving as an iOS developer, ship polished apps, and work on real-world products.
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span id="year"></span> Hüseyin Tüç • Built with HTML + CSS
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
